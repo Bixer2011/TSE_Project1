@@ -1,0 +1,20 @@
+/* Style for the container */
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+.box {
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+  }
+
+.row {
+    margin: 3px;
+  }
+  
