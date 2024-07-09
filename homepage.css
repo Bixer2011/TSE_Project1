@@ -1,11 +1,26 @@
 body {
-    background-image: url('wallpaper.jpg');
+    background-image: url('Images/wallpaper.jpg');
     width: 600px; /* Set a fixed width (adjust as needed) */
     margin: 0 auto; /* Center horizontally */
-    background-color: #ff9500; /* Set your desired background color */
     padding: 0 20px 20px 20px; /* Add padding (top, right, bottom, left) */
-    border: 5px solid black; /* Add a border */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #1abc9c;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+}
+
 /* Style for the container */
 .container {
     display:flex;
