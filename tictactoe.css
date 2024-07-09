@@ -1,10 +1,27 @@
 /* Style for the container */
 body {
-    display:flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
   }
+
+.game-header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    /* Add any other styling you'd like for the header */
+}
+
+.game-container {
+    border: 2px solid #333; /* Add a border around the grid */
+    padding: 20px;
+    /* Add any other styling you'd like for the container */
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 
 .box {
     width: 150px;
