@@ -1,39 +1,124 @@
 /* Style for the container */
 body {
     min-height: 100vh;
+    background-size: cover;         /* Optional: Controls how the image fills the background */
+    background-position: center;    /* Optional: Controls the position of the image */
   }
 
-.game-header {
+ 
+  
+  .header {
+    display: flex; /* Makes header and navigation elements sit side-by-side */
+    justify-content: center; /* Spreads navigation links to the sides */
+    align-items: center; /* Aligns content vertically */
+    padding: 1rem 2rem; /* Adds padding for spacing */
+    background-color: #f0f0f0; /* Sets a light gray background */
+    font-family: "Montserrat", sans-serif; /* Primary font */
+    opacity: 0.3;
+  }
+  
+  
+  .header h1 {
+    font-size: 1.5rem; /* Adjusts heading font size */
+    margin: 0; /* Removes default margin */
+  }
+  
+  .header nav ul {
+    list-style: none; /* Removes default list style (bullets) */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+  }
+  
+  .header nav li {
+    display: inline-block; /* Makes list items behave like inline elements */
+    margin-right: 1rem; /* Adds margin between links */
+  }
+  
+  .header nav a {
+    text-decoration: none; /* Removes underline from links */
+    color: #333; /* Sets link text color */
+    font-weight: bold; /* Makes links bolder */
+  }
+  
+  .header nav a:hover {
+    color: #000; /* Changes link color on hover */
+  }
+  
+
+.game-title {
     text-align: center;
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: "Montserrat", sans-serif; /* Primary font */
     /* Add any other styling you'd like for the header */
 }
 
 .game-container {
-    border: 2px solid #333; /* Add a border around the grid */
+    border: 2px solid #000000; /* Add a border around the grid */
     padding: 20px;
     /* Add any other styling you'd like for the container */
 }
 
 .grid {
-  display: flex;
+  align-self: center;
   justify-content: center;
-  align-items: center;
+  display: grid;
 
 }
 
 .box {
     width: 150px;
     height: 150px;
-    border: 1px solid black;
-    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(0, 119, 255);
     margin-bottom: 10px;
     display:flex;
   }
 
 .row {
-    margin: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  
+
+  h3 {
+    border-top: 2px solid #44b7ff;
+    width: 100%;
+    float: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif; /* Primary font */
+}
+
+
+h3::before {
+  content: "";
+  display: block;
+  position: relative;
+  top: 0px;
+  left: 0;
+  font-size: 36px;
+  background-image: linear-gradient(to top, #429ce9 0, #1375b0 100%);
+  color: #fff;
+  float: left;
+  line-height: 0;
+  font-weight: 600;
+  clip-path: polygon(0 -1%, 100% -1%, calc(100% - 35px) 100%, 0 100%);
+}
+
+.resetbutton {
+  background-color: #ff0000; /* Sets a light gray background */
+  color:#000000;
+  font-family: "Montserrat", sans-serif; /* Primary font */
+  border-color: #000000;
+}
+
+/* Fallback font for browsers that don't support "Montserrat" */
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Regular.ttf") format("ttf"),
+       url("fonts/Montserrat-Regular.ttf") format("ttf");
+}
+
  

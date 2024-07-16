@@ -1,5 +1,9 @@
-const boxeslist = [0, 0, 0, 0, 0, 0, 0, 0, 0]; // Array to track game board state (0: empty, 1: Player 1, 2: Player 2)
+
+
+boxeslist = [0, 0, 0, 0, 0, 0, 0, 0, 0]; // Array to track game board state (0: empty, 1: Player 1, 2: Player 2)
 let playerturn = 1;  // Current player (1: Player 1, 2: Player 2)
+
+
 
 // Winning conditions (all possible combinations)
 const winConditions = [
@@ -15,16 +19,19 @@ const winConditions = [
 
 // Player indicator (optional, can be implemented with UI elements)
 function displayPlayerTurn() {
-  // Update UI element (e.g., text) to show current player
-  console.log(`Player ${playerturn}'s turn`); // Placeholder for now
+   textelement = document.getElementById("currentplayertext")
+   textelement.innerHTML = "Current Player: " + playerturn;
+
 }
 
 // Stopping the game when it ends
 function stopGame() {
   // Disable click events on boxes to prevent further moves
   boxes.forEach(box => box.removeEventListener('click', handleClick));
-  console.log("Game Over!"); // Placeholder for now (e.g., display a message)
+  textelement = document.getElementById("currentplayertext")
+  textelement.innerHTML = "Tie!";
 }
+
 
 // Check for a winner
 function checkForWin() {
@@ -33,7 +40,8 @@ function checkForWin() {
     const [a, b, c] = condition;
     if (boxeslist[a] === boxeslist[b] && boxeslist[b] === boxeslist[c] && boxeslist[a] !== 0) {
       stopGame();
-      console.log(`Player ${boxeslist[a]} Wins!`); // Display winner message
+      textelement = document.getElementById("currentplayertext")
+      textelement.innerHTML = "Player: " + playerturn + " wins!";
       return true; // Indicate a winner has been found
     }
   }
@@ -41,7 +49,6 @@ function checkForWin() {
   // Check for a tie (all cells filled but no winner)
   if (!boxeslist.includes(0)) {
     stopGame();
-    console.log("It's a Tie!"); // Display tie message
     return true;
   }
 
@@ -77,8 +84,24 @@ function switchingTurn() {
   playerturn = playerturn === 1 ? 2 : 1;
 }
 
+
+button = document.getElementById("resetbutton");
+button.addEventListener("click", function(){
+  boxeslist = [0, 0, 0, 0, 0, 0, 0, 0, 0]; 
+  let playerturn = 1;  
+
+  boxes.forEach(removeImage);
+
+});
+
+function removeImage(eachbox){
+  eachbox.innerHTML = "";
+}
+
 // Add click event listeners to boxes
 const boxes = document.querySelectorAll(".box");
 boxes.forEach(box => box.addEventListener('click', handleClick));
 
 displayPlayerTurn(); // Display initial player turn (optional)
+
+
