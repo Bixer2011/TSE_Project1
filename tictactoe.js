@@ -1,9 +1,7 @@
 
 
 boxeslist = [0, 0, 0, 0, 0, 0, 0, 0, 0]; // Array to track game board state (0: empty, 1: Player 1, 2: Player 2)
-let playerturn = 1;  // Current player (1: Player 1, 2: Player 2)
-
-
+let playerturn = 1; // Current player (1: Player 1, 2: Player 2)
 
 // Winning conditions (all possible combinations)
 const winConditions = [
@@ -14,33 +12,35 @@ const winConditions = [
   [1, 4, 7],
   [2, 5, 8],
   [0, 4, 8],
-  [2, 4, 6]
+  [2, 4, 6],
 ];
 
 // Player indicator (optional, can be implemented with UI elements)
 function displayPlayerTurn() {
-   textelement = document.getElementById("currentplayertext")
-   textelement.innerHTML = "Current Player: " + playerturn;
-
+  textelement = document.getElementById("currentplayertext");
+  textelement.innerHTML = "Current Player: " + playerturn;
 }
 
 // Stopping the game when it ends
 function stopGame() {
   // Disable click events on boxes to prevent further moves
-  boxes.forEach(box => box.removeEventListener('click', handleClick));
-  textelement = document.getElementById("currentplayertext")
+  boxes.forEach((box) => box.removeEventListener("click", handleClick));
+  let textelement = document.getElementById("currentplayertext");
   textelement.innerHTML = "Tie!";
 }
-
 
 // Check for a winner
 function checkForWin() {
   for (let i = 0; i < winConditions.length; i++) {
     const condition = winConditions[i];
     const [a, b, c] = condition;
-    if (boxeslist[a] === boxeslist[b] && boxeslist[b] === boxeslist[c] && boxeslist[a] !== 0) {
+    if (
+      boxeslist[a] === boxeslist[b] &&
+      boxeslist[b] === boxeslist[c] &&
+      boxeslist[a] !== 0
+    ) {
       stopGame();
-      textelement = document.getElementById("currentplayertext")
+      textelement = document.getElementById("currentplayertext");
       textelement.innerHTML = "Player: " + playerturn + " wins!";
       return true; // Indicate a winner has been found
     }
@@ -60,8 +60,9 @@ function handleClick(event) {
   const box = event.currentTarget;
   const boxIndex = parseInt(box.id) - 1; // Convert box ID to index
 
-  if (boxeslist[boxIndex] === 0) { // Check if box is empty
-    boxeslist[boxIndex] = playerturn;  // Update game board state
+  if (boxeslist[boxIndex] === 0) {
+    // Check if box is empty
+    boxeslist[boxIndex] = playerturn; // Update game board state
 
     // Add appropriate image based on player turn
     const image = document.createElement("img");
@@ -75,7 +76,7 @@ function handleClick(event) {
       displayPlayerTurn();
     }
   } else {
-    console.log("Box already occupied!");  // Optional message for invalid clicks
+    console.log("Box already occupied!"); // Optional message for invalid clicks
   }
 }
 
@@ -84,24 +85,23 @@ function switchingTurn() {
   playerturn = playerturn === 1 ? 2 : 1;
 }
 
-
 button = document.getElementById("resetbutton");
-button.addEventListener("click", function(){
-  boxeslist = [0, 0, 0, 0, 0, 0, 0, 0, 0]; 
-  let playerturn = 1;  
+button.addEventListener("click", function () {
+  boxeslist = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let playerturn = 1;
 
   boxes.forEach(removeImage);
+  displayPlayerTurn()
+    boxes.forEach((box) => box.addEventListener("click", handleClick));
 
 });
 
-function removeImage(eachbox){
+function removeImage(eachbox) {
   eachbox.innerHTML = "";
 }
 
 // Add click event listeners to boxes
 const boxes = document.querySelectorAll(".box");
-boxes.forEach(box => box.addEventListener('click', handleClick));
+boxes.forEach((box) => box.addEventListener("click", handleClick));
 
 displayPlayerTurn(); // Display initial player turn (optional)
-
-
