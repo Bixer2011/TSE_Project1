@@ -10,7 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;  /* Optional: Set minimum height for full viewport */
+  min-height: 50vh;  /* Optional: Set minimum height for full viewport */
 }
 
 

@@ -1,11 +1,11 @@
-.projectview{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
+.projectview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 
-.iframe{
-    width: 200%;
-    height: auto;
+.iframe {
+  width: 200%;
+  height: auto;
 }

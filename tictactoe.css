@@ -1,57 +1,54 @@
 /* Style for the container */
 body {
-    min-height: 100vh;
-    background-size: cover;         /* Optional: Controls how the image fills the background */
-    background-position: center;    /* Optional: Controls the position of the image */
-  }
-  
+  min-height: 100vh;
+  background-size: cover; /* Optional: Controls how the image fills the background */
+  background-position: center; /* Optional: Controls the position of the image */
+}
 
 .game-title {
-    text-align: center;
-    font-size: 24px;
-    margin-top: 20px;
-    font-family: "Montserrat", sans-serif; /* Primary font */
-    /* Add any other styling you'd like for the header */
+  text-align: center;
+  font-size: 24px;
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif; /* Primary font */
+  /* Add any other styling you'd like for the header */
 }
 
 .game-container {
-    border: 2px solid #000000; /* Add a border around the grid */
-    padding: 20px;
-    /* Add any other styling you'd like for the container */
+  border: 2px solid #000000; /* Add a border around the grid */
+  padding: 20px;
+  /* Add any other styling you'd like for the container */
 }
 
 .grid {
   align-self: center;
   justify-content: center;
   display: grid;
-
 }
 
 .box {
-    width: 90px;
-    height: 90px;
-    border: 1px solid rgb(0, 0, 0);
-    background-color: rgb(0, 119, 255);
-    margin-bottom: 10px;
-    display:flex;
-  }
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  h3 {
-    border-top: 2px solid #44b7ff;
-    width: 100%;
-    float: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-family: "Montserrat", sans-serif; /* Primary font */
+  width: 90px;
+  height: 90px;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(0, 119, 255);
+  margin-bottom: 10px;
+  display: flex;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h3 {
+  border-top: 2px solid #44b7ff;
+  width: 100%;
+  float: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif; /* Primary font */
+}
 
 h3::before {
   content: "";
@@ -70,7 +67,7 @@ h3::before {
 
 .resetbutton {
   background-color: #ff0000; /* Sets a light gray background */
-  color:#000000;
+  color: #000000;
   font-family: "Montserrat", sans-serif; /* Primary font */
   border-color: #000000;
 }
@@ -79,7 +76,5 @@ h3::before {
 @font-face {
   font-family: "Montserrat";
   src: url("fonts/Montserrat-Regular.ttf") format("ttf"),
-       url("fonts/Montserrat-Regular.ttf") format("ttf");
+    url("fonts/Montserrat-Regular.ttf") format("ttf");
 }
-
- 

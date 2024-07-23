@@ -1,21 +1,17 @@
-.profile{
+.profile {
   display: flex;
   justify-content: center;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-
 }
 
 .profile-data {
   font-family: sans-serif;
-  font-size:small;
+  font-size: small;
   max-width: 500px;
   color: #000000;
 }
-
-
-
 
 .profile-picture {
   width: 350px;

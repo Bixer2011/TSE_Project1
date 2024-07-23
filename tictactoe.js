@@ -1,5 +1,3 @@
-
-
 boxeslist = [0, 0, 0, 0, 0, 0, 0, 0, 0]; // Array to track game board state (0: empty, 1: Player 1, 2: Player 2)
 let playerturn = 1; // Current player (1: Player 1, 2: Player 2)
 
@@ -91,9 +89,8 @@ button.addEventListener("click", function () {
   let playerturn = 1;
 
   boxes.forEach(removeImage);
-  displayPlayerTurn()
-    boxes.forEach((box) => box.addEventListener("click", handleClick));
-
+  displayPlayerTurn();
+  boxes.forEach((box) => box.addEventListener("click", handleClick));
 });
 
 function removeImage(eachbox) {
