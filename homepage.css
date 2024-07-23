@@ -17,6 +17,17 @@ body {
 .my-button {  /* Replace with your button's class or ID */
   /* Existing button styles */
 }
+@media (min-width: 1080px) and (max-width: 1081px){
+  button{
+    font-size:5vw;
+  }
+}
+
+@media (min-width: 1082px){
+  button{
+    font-size: 2vw;
+  }
+}
 
 
 /* Base styles for buttons */
@@ -25,7 +36,6 @@ button {
     padding: 10px 20px; /* Inner spacing */
     border: none; /* Remove default border */
     border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Font size */
     cursor: pointer; /* Indicate clickable element */
     transition: all 0.2s ease-in-out; /* Smooth hover effect */
   }

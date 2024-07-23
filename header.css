@@ -11,8 +11,20 @@ body {
   background-color: #f0f0f0; /* Sets a light gray background */
   position: sticky;
   font-family: "Montserrat", sans-serif; /* Primary font */
-  top: 10px;
+  font-size: 1vw;
+  top: 0px;
   z-index: 100;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+@media (min-width: 1080px) and (max-width: 1081px){
+  .header{
+    margin-left:0;
+    font-size:3rem;
+    margin-right:0;
+  }
 }
 
 .header h1 {
